@@ -40,6 +40,8 @@ public class BaseUnitConfig : ScriptableObject
     [SerializeField] private UnitCulture _culture;
     public UnitCulture Culture => _culture;
 
-    [SerializeField] private UnitClass _class;
-    public UnitClass Class => _class;
+    [SerializeField] private UnitClass[] _classes;
+    public UnitClass[] Classes => _classes;
+
+    public UnitCultureGroup CultureGroup => CultureData.GetGroup(_culture);
 }
