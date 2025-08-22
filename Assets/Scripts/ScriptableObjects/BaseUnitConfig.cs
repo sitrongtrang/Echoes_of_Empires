@@ -7,11 +7,11 @@ public class BaseUnitConfig : ScriptableObject
     [SerializeField] private string _name;
     public string Name => _name;
 
-    [SerializeField] private Mesh _model;
-    public Mesh Model => _model;
+    [SerializeField] private Sprite _unitSprite;
+    public Sprite UnitSprite => _unitSprite;
 
-    [SerializeField] private Sprite _avatar;
-    public Sprite Avatar => _avatar;
+    [SerializeField] private Sprite _portrait;
+    public Sprite Portrait => _portrait;
 
     [SerializeField] private AnimatorController _anim;
     public AnimatorController Anim => _anim;
@@ -37,11 +37,11 @@ public class BaseUnitConfig : ScriptableObject
     [SerializeField] private UnitRarity _rarity;
     public UnitRarity Rarity => _rarity;
 
-    [SerializeField] private UnitCulture _culture;
-    public UnitCulture Culture => _culture;
+    // [SerializeField] private UnitCulture _culture;
+    // public UnitCulture Culture => _culture;
 
-    [SerializeField] private UnitClass[] _classes;
-    public UnitClass[] Classes => _classes;
+    // [SerializeField] private UnitClass[] _classes;
+    // public UnitClass[] Classes => _classes;
 
-    public UnitCultureGroup CultureGroup => CultureData.GetGroup(_culture);
+    // public UnitCultureGroup CultureGroup => CultureData.GetGroup(_culture);
 }
