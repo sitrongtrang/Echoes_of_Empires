@@ -6,7 +6,7 @@ public class UnitController : MonoBehaviour
     [Header("Unit Configuration")]
     public BaseUnitConfig Config { get; private set; }
     private Animator _animator;
-    private MeshFilter _meshFilter;
+    private SpriteRenderer _spriteRenderer;
 
     [Header("Unit Components")]
     private UnitHealth _health;
@@ -38,9 +38,9 @@ public class UnitController : MonoBehaviour
     {
         Config = config;
 
-        _meshFilter = GetComponent<MeshFilter>();
-        if (_meshFilter && Config.Model)
-            _meshFilter.mesh = Config.Model;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        if (_spriteRenderer && Config.UnitSprite)
+            _spriteRenderer.sprite = Config.UnitSprite;
 
         _animator = GetComponent<Animator>();
         if (_animator && Config.Anim)
