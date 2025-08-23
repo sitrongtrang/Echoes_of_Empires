@@ -31,6 +31,9 @@ public class BaseUnitConfig : ScriptableObject
     [SerializeField] private int _baseMovementRange;
     public int BaseMovementRange => _baseMovementRange;
 
+    [SerializeField] private int _baseCost;
+    public int BaseCost => _baseCost;
+
     [SerializeField] private BaseSkillConfig[] _skills;
     public BaseSkillConfig[] Skills => _skills;
 
