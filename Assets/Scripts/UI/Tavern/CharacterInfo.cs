@@ -15,10 +15,13 @@ public class CharacterInfo : MonoBehaviour
 
     public void SetInfo(BaseUnitConfig config, RarityMapperSO rarityMapper)
     {
-        if (string.IsNullOrEmpty(config.Name))
+        if (string.IsNullOrEmpty(config.Name)) 
             _nameText.text = "???";
         else
             _nameText.text = config.Name;
+            
+        _nameText.color = rarityMapper.GetColor(config.Rarity);
+            
 
         // if (string.IsNullOrEmpty(config.Description))
         //     _descriptionText.text = "...";
@@ -38,7 +41,7 @@ public class CharacterInfo : MonoBehaviour
             {
                 portraitFrame.sprite = rarityMapper.GetFrame(config.Rarity);
             }
-            Image portraitImage = _portrait.transform.Find("Portrait").GetComponent<Image>();
+            Image portraitImage = _portrait.transform.Find("Image").GetComponent<Image>();
             portraitImage.sprite = config.Portrait;
         }
     }

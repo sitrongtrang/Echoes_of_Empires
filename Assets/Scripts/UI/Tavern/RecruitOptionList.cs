@@ -6,7 +6,7 @@ public class RecruitOptionList : MonoBehaviour
     [SerializeField] private GameObject _optionPrefab;
     [SerializeField] private CharacterInfo _characterInfo;
     
-    public void Recruit(List<BaseUnitConfig> recruits)
+    public void DisplayOptions(List<BaseUnitConfig> recruits)
     {
         for (int i = 0; i < recruits.Count; i++)
         {
