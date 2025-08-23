@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Child Luffy
   _unitSprite: {fileID: 0}
-  _portrait: {fileID: 21300000, guid: 7f2cd363b41ef6947b30da67331ea948, type: 3}
+  _portrait: {fileID: -1049826589, guid: db54c6acdfacfe84dadf7713e85e9467, type: 3}
   _anim: {fileID: 0}
   _description: 
   _baseHealth: 0
   _baseDamage: 0
   _baseAttackRange: 0
   _baseMovementRange: 0
+  _baseCost: 0
   _skills: []
   _rarity: 2
