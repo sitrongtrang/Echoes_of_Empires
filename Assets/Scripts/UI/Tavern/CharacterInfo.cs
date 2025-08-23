@@ -4,7 +4,6 @@ using TMPro;
 
 public class CharacterInfo : MonoBehaviour
 {
-    [SerializeField] private RarityMapperSO _rarityMapper;
     [SerializeField] private TMP_Text _nameText;
     // private TMP_Text _descriptionText;
     [SerializeField] private TMP_Text _hpText;
