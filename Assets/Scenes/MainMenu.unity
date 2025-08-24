@@ -1904,6 +1904,7 @@ MonoBehaviour:
   _fragmentsEquivalentText: {fileID: 1737022090}
   _orText: {fileID: 342328798}
   _addToGalleryButton: {fileID: 1088088755}
+  _addFragmentButton: {fileID: 1982047982}
 --- !u!1 &1158064217
 GameObject:
   m_ObjectHideFlags: 0
@@ -3249,6 +3250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f12ae599bf04a46b13e799388d0c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _emptyFrame: {fileID: -657718357, guid: abf54b4be2073ea489bc2bc864faa98f, type: 3}
   _optionPrefab: {fileID: 5575684994284802904, guid: 587deb89672bcaf439aff4fe57c1c592, type: 3}
   _characterInfo: {fileID: 1136571899}
 --- !u!1 &1639663099

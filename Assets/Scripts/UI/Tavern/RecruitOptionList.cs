@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class RecruitOptionList : MonoBehaviour
 {
+    [SerializeField] private Sprite _emptyFrame;
     [SerializeField] private GameObject _optionPrefab;
     [SerializeField] private CharacterInfo _characterInfo;
     
@@ -15,7 +16,7 @@ public class RecruitOptionList : MonoBehaviour
                 GameObject option = Instantiate(_optionPrefab, transform);
                 option.transform.SetParent(transform);
                 RecruitOption recruitOption = option.AddComponent<RecruitOption>();
-                recruitOption.Initialize(recruits[i], _characterInfo);
+                recruitOption.Initialize(recruits[i], _characterInfo, _emptyFrame);
             }
             else
             {
@@ -23,12 +24,12 @@ public class RecruitOptionList : MonoBehaviour
                 option.SetActive(true);
                 if (option.TryGetComponent<RecruitOption>(out var recruitOption))
                 {
-                    recruitOption.Initialize(recruits[i], _characterInfo);
+                    recruitOption.Initialize(recruits[i], _characterInfo, _emptyFrame);
                 }
                 else
                 {
                     recruitOption = option.AddComponent<RecruitOption>();
-                    recruitOption.Initialize(recruits[i], _characterInfo);
+                    recruitOption.Initialize(recruits[i], _characterInfo, _emptyFrame);
                 }
             }
         }

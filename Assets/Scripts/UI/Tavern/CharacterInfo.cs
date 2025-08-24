@@ -15,8 +15,9 @@ public class CharacterInfo : MonoBehaviour
     [SerializeField] private TMP_Text _fragmentsEquivalentText;
     [SerializeField] private TMP_Text _orText;
     [SerializeField] private Button _addToGalleryButton;
+    [SerializeField] private Button _addFragmentButton;
 
-    public void SetInfo(BaseCharacterConfig config, RarityMapperSO rarityMapper)
+    public void SetInfo(BaseCharacterConfig config, RarityMapperSO rarityMapper, RecruitOption recruitOption)
     {
         if (string.IsNullOrEmpty(config.Name))
             _nameText.text = "???";
@@ -58,8 +59,19 @@ public class CharacterInfo : MonoBehaviour
                 {
                     CharacterGallery.Instance.AddCharacter(config);
                     gameObject.SetActive(false);
+                    recruitOption.ClearOption();
                 }
             );
         }
+
+        _addFragmentButton.onClick.RemoveAllListeners();
+        _addFragmentButton.onClick.AddListener(
+            () =>
+            {
+                CharacterGallery.Instance.AddFragments(config, config.FragmentsEquivalent);
+                gameObject.SetActive(false);
+                recruitOption.ClearOption();
+            }
+        );
     }
 }
