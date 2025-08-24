@@ -11,16 +11,17 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             return;
         }
+        
         Instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
         // Init();
     }
 
     void Init()
     {
-        _luaClient = this.gameObject.AddComponent<LuaClient>();
+        _luaClient = gameObject.AddComponent<LuaClient>();
     }
 }

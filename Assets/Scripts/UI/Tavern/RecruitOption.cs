@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class RecruitOption : MonoBehaviour
 {
-    private BaseUnitConfig _unitConfig;
+    private BaseCharacterConfig _unitConfig;
     private CharacterInfo _characterInfo;
 
     void OnEnable()
@@ -16,7 +16,7 @@ public class RecruitOption : MonoBehaviour
         GetComponentInChildren<Button>().onClick.RemoveAllListeners();
     }
 
-    public void Initialize(BaseUnitConfig unitConfig, CharacterInfo characterInfo)
+    public void Initialize(BaseCharacterConfig unitConfig, CharacterInfo characterInfo)
     {
         _unitConfig = unitConfig;
         _characterInfo = characterInfo;

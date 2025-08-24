@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class RecruitButton : MonoBehaviour
 {
-    [SerializeField] private BaseUnitConfig[] _unitConfigs;
+    [SerializeField] private BaseCharacterConfig[] _unitConfigs;
     [SerializeField] private RecruitOptionList _recruitOptionList;
     [SerializeField] private RecruitMode _recruitMode;
 
@@ -21,18 +21,18 @@ public class RecruitButton : MonoBehaviour
     public void Recruit()
     {
         int numRecruits = Mathf.Min((int)_recruitMode, GameConstants.MAX_RECRUIT_OPTIONS);
-        List<BaseUnitConfig> recruits = GetRandomUnits(numRecruits);
+        List<BaseCharacterConfig> recruits = GetRandomUnits(numRecruits);
         _recruitOptionList.DisplayOptions(recruits);
     }
 
-    private List<BaseUnitConfig> GetRandomUnits(int numRecruits)
+    private List<BaseCharacterConfig> GetRandomUnits(int numRecruits)
     {
-        List<BaseUnitConfig> randomUnits = new();
+        List<BaseCharacterConfig> randomUnits = new();
 
         for (int i = 0; i < numRecruits; i++)
         {
             int randomIndex = Random.Range(0, _unitConfigs.Length);
-            BaseUnitConfig randomUnit = _unitConfigs[randomIndex];
+            BaseCharacterConfig randomUnit = _unitConfigs[randomIndex];
             randomUnits.Add(randomUnit);
         }
 

@@ -1,8 +1,8 @@
 using UnityEditor.Animations;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BaseUnitConfig", menuName = "Scriptable Objects/BaseUnitConfig")]
-public class BaseUnitConfig : ScriptableObject
+[CreateAssetMenu(fileName = "BaseCharacterConfig", menuName = "Scriptable Objects/BaseCharacterConfig")]
+public class BaseCharacterConfig : ScriptableObject
 {
     [SerializeField] private string _name;
     public string Name => _name;
@@ -40,11 +40,9 @@ public class BaseUnitConfig : ScriptableObject
     [SerializeField] private UnitRarity _rarity;
     public UnitRarity Rarity => _rarity;
 
-    // [SerializeField] private UnitCulture _culture;
-    // public UnitCulture Culture => _culture;
+    [SerializeField] private BaseCharacterConfig[] _upgradeForms;
+    public BaseCharacterConfig[] UpgradeForms => _upgradeForms;
 
-    // [SerializeField] private UnitClass[] _classes;
-    // public UnitClass[] Classes => _classes;
-
-    // public UnitCultureGroup CultureGroup => CultureData.GetGroup(_culture);
+    [SerializeField] private int _fragmentsEquivalent;
+    public int FragmentsEquivalent => _fragmentsEquivalent;
 }

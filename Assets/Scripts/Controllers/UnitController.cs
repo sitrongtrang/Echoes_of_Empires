@@ -4,7 +4,7 @@ using UnityEngine;
 public class UnitController : MonoBehaviour
 {
     [Header("Unit Configuration")]
-    public BaseUnitConfig Config { get; private set; }
+    public BaseCharacterConfig Config { get; private set; }
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
 
@@ -34,7 +34,7 @@ public class UnitController : MonoBehaviour
     #endregion
 
     #region Initialization
-    public void Initialize(BaseUnitConfig config)
+    public void Initialize(BaseCharacterConfig config)
     {
         Config = config;
 
