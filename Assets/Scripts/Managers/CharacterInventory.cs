@@ -26,7 +26,7 @@ public class CharacterGallery : MonoBehaviour
         if (!_ownedCharacters.Contains(character))
             _ownedCharacters.Add(character);
         else
-            AddFragments(character, character.FragmentsEquivalent);
+            AddFragments(character, GameManager.Instance.RarityMapper.GetFragmentsEquivalent(character.Rarity));
     }
 
     public void AddFragments(BaseCharacterConfig character, int fragments)

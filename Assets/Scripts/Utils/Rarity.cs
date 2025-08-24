@@ -21,6 +21,7 @@ public class RarityMap
     public UnitRarity Rarity;
     public Color Color;
     public Sprite Frame;
+    public int FragmentsEquivalent;
 }
 
 // public static class Something
@@ -60,6 +61,15 @@ public class RarityMapperSO : ScriptableObject
                 return Rarities[i].Color;
 
         return Color.black;
+    }
+
+    public int GetFragmentsEquivalent(UnitRarity rarity)
+    {
+        for (int i = 0; i < Rarities.Length; i++)
+            if (Rarities[i].Rarity == rarity)
+                return Rarities[i].FragmentsEquivalent;
+
+        return 0;
     }
 }
 

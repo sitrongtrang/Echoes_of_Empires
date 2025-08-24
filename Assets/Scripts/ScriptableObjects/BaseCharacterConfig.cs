@@ -43,6 +43,6 @@ public class BaseCharacterConfig : ScriptableObject
     [SerializeField] private BaseCharacterConfig[] _upgradeForms;
     public BaseCharacterConfig[] UpgradeForms => _upgradeForms;
 
-    [SerializeField] private int _fragmentsEquivalent;
-    public int FragmentsEquivalent => _fragmentsEquivalent;
+    // [SerializeField] private int _fragmentsEquivalent;
+    // public int FragmentsEquivalent => _fragmentsEquivalent;
 }

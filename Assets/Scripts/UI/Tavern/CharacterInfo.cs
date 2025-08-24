@@ -19,6 +19,8 @@ public class CharacterInfo : MonoBehaviour
 
     public void SetInfo(BaseCharacterConfig config, RarityMapperSO rarityMapper, RecruitOption recruitOption)
     {
+        int fragmentsEquivalent = GameManager.Instance.RarityMapper.GetFragmentsEquivalent(config.Rarity);
+
         if (string.IsNullOrEmpty(config.Name))
             _nameText.text = "???";
         else
@@ -31,7 +33,7 @@ public class CharacterInfo : MonoBehaviour
         _attackRangeText.text = $"{config.BaseAttackRange}";
         _movementRangeText.text = $"{config.BaseMovementRange}";
         _costText.text = $"{config.BaseCost}";
-        _fragmentsEquivalentText.text = $"{config.FragmentsEquivalent}\nFragments";
+        _fragmentsEquivalentText.text = $"{fragmentsEquivalent}\nFragments";
 
         if (_portrait != null && config.Portrait != null)
         {
@@ -68,7 +70,7 @@ public class CharacterInfo : MonoBehaviour
         _addFragmentButton.onClick.AddListener(
             () =>
             {
-                CharacterGallery.Instance.AddFragments(config, config.FragmentsEquivalent);
+                CharacterGallery.Instance.AddFragments(config, fragmentsEquivalent);
                 gameObject.SetActive(false);
                 recruitOption.ClearOption();
             }
