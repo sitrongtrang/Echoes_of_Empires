@@ -1,4 +1,3 @@
-using UnityEditor.Animations;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BaseCharacterConfig", menuName = "Scriptable Objects/BaseCharacterConfig")]
@@ -13,8 +12,8 @@ public class BaseCharacterConfig : ScriptableObject
     [SerializeField] private Sprite _portrait;
     public Sprite Portrait => _portrait;
 
-    [SerializeField] private AnimatorController _anim;
-    public AnimatorController Anim => _anim;
+    [SerializeField] private RuntimeAnimatorController _anim;
+    public RuntimeAnimatorController Anim => _anim;
 
     [SerializeField] private string _description;
     public string Description => _description;

@@ -9,12 +9,16 @@ public class RecruitOption : MonoBehaviour
 
     void OnEnable()
     {
-        GetComponentInChildren<Button>().onClick.AddListener(DisplayInfo);
+        Button button = GetComponentInChildren<Button>();
+        if (button != null)
+            button.onClick.AddListener(DisplayInfo);
     }
 
     void OnDisable()
     {
-        GetComponentInChildren<Button>().onClick.RemoveAllListeners();
+        Button button = GetComponentInChildren<Button>();
+        if (button != null)
+            button.onClick.RemoveAllListeners();
     }
 
     public void Initialize(BaseCharacterConfig unitConfig, CharacterInfo characterInfo, Sprite emptyFrame = null)

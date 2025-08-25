@@ -40,6 +40,7 @@ public static class LuaBinder
 		UnityEngine_AudioClipWrap.Register(L);
 		UnityEngine_AssetBundleWrap.Register(L);
 		UnityEngine_ParticleSystemWrap.Register(L);
+		UnityEngine_ParticleSystemRendererWrap.Register(L);
 		UnityEngine_AsyncOperationWrap.Register(L);
 		UnityEngine_LightTypeWrap.Register(L);
 		UnityEngine_SleepTimeoutWrap.Register(L);

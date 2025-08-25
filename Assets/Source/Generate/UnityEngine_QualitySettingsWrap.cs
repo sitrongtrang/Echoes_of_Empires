@@ -17,12 +17,12 @@ public class UnityEngine_QualitySettingsWrap
 		L.RegFunction("GetRenderPipelineAssetAt", GetRenderPipelineAssetAt);
 		L.RegFunction("GetQualityLevel", GetQualityLevel);
 		L.RegFunction("GetQualitySettings", GetQualitySettings);
-		L.RegFunction("IsPlatformIncluded", IsPlatformIncluded);
-		L.RegFunction("TryIncludePlatformAt", TryIncludePlatformAt);
-		L.RegFunction("TryExcludePlatformAt", TryExcludePlatformAt);
-		L.RegFunction("GetActiveQualityLevelsForPlatform", GetActiveQualityLevelsForPlatform);
-		L.RegFunction("GetActiveQualityLevelsForPlatformCount", GetActiveQualityLevelsForPlatformCount);
-		L.RegFunction("GetAllRenderPipelineAssetsForPlatform", GetAllRenderPipelineAssetsForPlatform);
+		// L.RegFunction("IsPlatformIncluded", IsPlatformIncluded);
+		// L.RegFunction("TryIncludePlatformAt", TryIncludePlatformAt);
+		// L.RegFunction("TryExcludePlatformAt", TryExcludePlatformAt);
+		// L.RegFunction("GetActiveQualityLevelsForPlatform", GetActiveQualityLevelsForPlatform);
+		// L.RegFunction("GetActiveQualityLevelsForPlatformCount", GetActiveQualityLevelsForPlatformCount);
+		// L.RegFunction("GetAllRenderPipelineAssetsForPlatform", GetAllRenderPipelineAssetsForPlatform);
 		L.RegFunction("__eq", op_Equality);
 		L.RegVar("pixelLightCount", get_pixelLightCount, set_pixelLightCount);
 		L.RegVar("shadows", get_shadows, set_shadows);
@@ -311,115 +311,115 @@ public class UnityEngine_QualitySettingsWrap
 		}
 	}
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int IsPlatformIncluded(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 2);
-			string arg0 = ToLua.CheckString(L, 1);
-			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
-			bool o = UnityEngine.QualitySettings.IsPlatformIncluded(arg0, arg1);
-			LuaDLL.lua_pushboolean(L, o);
-			return 1;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int IsPlatformIncluded(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		ToLua.CheckArgsCount(L, 2);
+	// 		string arg0 = ToLua.CheckString(L, 1);
+	// 		int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+	// 		bool o = UnityEngine.QualitySettings.IsPlatformIncluded(arg0, arg1);
+	// 		LuaDLL.lua_pushboolean(L, o);
+	// 		return 1;
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int TryIncludePlatformAt(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 3);
-			string arg0 = ToLua.CheckString(L, 1);
-			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
-			System.Exception arg2 = null;
-			bool o = UnityEngine.QualitySettings.TryIncludePlatformAt(arg0, arg1, out arg2);
-			LuaDLL.lua_pushboolean(L, o);
-			ToLua.PushObject(L, arg2);
-			return 2;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int TryIncludePlatformAt(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		ToLua.CheckArgsCount(L, 3);
+	// 		string arg0 = ToLua.CheckString(L, 1);
+	// 		int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+	// 		System.Exception arg2 = null;
+	// 		bool o = UnityEngine.QualitySettings.TryIncludePlatformAt(arg0, arg1, out arg2);
+	// 		LuaDLL.lua_pushboolean(L, o);
+	// 		ToLua.PushObject(L, arg2);
+	// 		return 2;
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int TryExcludePlatformAt(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 3);
-			string arg0 = ToLua.CheckString(L, 1);
-			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
-			System.Exception arg2 = null;
-			bool o = UnityEngine.QualitySettings.TryExcludePlatformAt(arg0, arg1, out arg2);
-			LuaDLL.lua_pushboolean(L, o);
-			ToLua.PushObject(L, arg2);
-			return 2;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int TryExcludePlatformAt(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		ToLua.CheckArgsCount(L, 3);
+	// 		string arg0 = ToLua.CheckString(L, 1);
+	// 		int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+	// 		System.Exception arg2 = null;
+	// 		bool o = UnityEngine.QualitySettings.TryExcludePlatformAt(arg0, arg1, out arg2);
+	// 		LuaDLL.lua_pushboolean(L, o);
+	// 		ToLua.PushObject(L, arg2);
+	// 		return 2;
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int GetActiveQualityLevelsForPlatform(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 1);
-			string arg0 = ToLua.CheckString(L, 1);
-			int[] o = UnityEngine.QualitySettings.GetActiveQualityLevelsForPlatform(arg0);
-			ToLua.Push(L, o);
-			return 1;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int GetActiveQualityLevelsForPlatform(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		ToLua.CheckArgsCount(L, 1);
+	// 		string arg0 = ToLua.CheckString(L, 1);
+	// 		int[] o = UnityEngine.QualitySettings.GetActiveQualityLevelsForPlatform(arg0);
+	// 		ToLua.Push(L, o);
+	// 		return 1;
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int GetActiveQualityLevelsForPlatformCount(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 1);
-			string arg0 = ToLua.CheckString(L, 1);
-			int o = UnityEngine.QualitySettings.GetActiveQualityLevelsForPlatformCount(arg0);
-			LuaDLL.lua_pushinteger(L, o);
-			return 1;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int GetActiveQualityLevelsForPlatformCount(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		ToLua.CheckArgsCount(L, 1);
+	// 		string arg0 = ToLua.CheckString(L, 1);
+	// 		int o = UnityEngine.QualitySettings.GetActiveQualityLevelsForPlatformCount(arg0);
+	// 		LuaDLL.lua_pushinteger(L, o);
+	// 		return 1;
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int GetAllRenderPipelineAssetsForPlatform(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 2);
-			string arg0 = ToLua.CheckString(L, 1);
-			System.Collections.Generic.List<UnityEngine.Rendering.RenderPipelineAsset> arg1 = (System.Collections.Generic.List<UnityEngine.Rendering.RenderPipelineAsset>)ToLua.CheckObject(L, 2, typeof(System.Collections.Generic.List<UnityEngine.Rendering.RenderPipelineAsset>));
-			UnityEngine.QualitySettings.GetAllRenderPipelineAssetsForPlatform(arg0, ref arg1);
-			ToLua.PushSealed(L, arg1);
-			return 1;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int GetAllRenderPipelineAssetsForPlatform(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		ToLua.CheckArgsCount(L, 2);
+	// 		string arg0 = ToLua.CheckString(L, 1);
+	// 		System.Collections.Generic.List<UnityEngine.Rendering.RenderPipelineAsset> arg1 = (System.Collections.Generic.List<UnityEngine.Rendering.RenderPipelineAsset>)ToLua.CheckObject(L, 2, typeof(System.Collections.Generic.List<UnityEngine.Rendering.RenderPipelineAsset>));
+	// 		UnityEngine.QualitySettings.GetAllRenderPipelineAssetsForPlatform(arg0, ref arg1);
+	// 		ToLua.PushSealed(L, arg1);
+	// 		return 1;
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int op_Equality(IntPtr L)

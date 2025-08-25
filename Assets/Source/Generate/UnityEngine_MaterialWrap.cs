@@ -34,14 +34,14 @@ public class UnityEngine_MaterialWrap
 		L.RegFunction("ComputeCRC", ComputeCRC);
 		L.RegFunction("GetTexturePropertyNames", GetTexturePropertyNames);
 		L.RegFunction("GetTexturePropertyNameIDs", GetTexturePropertyNameIDs);
-		L.RegFunction("IsChildOf", IsChildOf);
-		L.RegFunction("RevertAllPropertyOverrides", RevertAllPropertyOverrides);
-		L.RegFunction("IsPropertyOverriden", IsPropertyOverriden);
-		L.RegFunction("IsPropertyLocked", IsPropertyLocked);
-		L.RegFunction("IsPropertyLockedByAncestor", IsPropertyLockedByAncestor);
-		L.RegFunction("SetPropertyLock", SetPropertyLock);
-		L.RegFunction("ApplyPropertyOverride", ApplyPropertyOverride);
-		L.RegFunction("RevertPropertyOverride", RevertPropertyOverride);
+		// L.RegFunction("IsChildOf", IsChildOf);
+		// L.RegFunction("RevertAllPropertyOverrides", RevertAllPropertyOverrides);
+		// L.RegFunction("IsPropertyOverriden", IsPropertyOverriden);
+		// L.RegFunction("IsPropertyLocked", IsPropertyLocked);
+		// L.RegFunction("IsPropertyLockedByAncestor", IsPropertyLockedByAncestor);
+		// L.RegFunction("SetPropertyLock", SetPropertyLock);
+		// L.RegFunction("ApplyPropertyOverride", ApplyPropertyOverride);
+		// L.RegFunction("RevertPropertyOverride", RevertPropertyOverride);
 		L.RegFunction("SetInt", SetInt);
 		L.RegFunction("SetFloat", SetFloat);
 		L.RegFunction("SetInteger", SetInteger);
@@ -89,8 +89,8 @@ public class UnityEngine_MaterialWrap
 		L.RegVar("enableInstancing", get_enableInstancing, set_enableInstancing);
 		L.RegVar("passCount", get_passCount, null);
 		L.RegVar("shaderKeywords", get_shaderKeywords, set_shaderKeywords);
-		L.RegVar("parent", get_parent, set_parent);
-		L.RegVar("isVariant", get_isVariant, null);
+		// L.RegVar("parent", get_parent, set_parent);
+		// L.RegVar("isVariant", get_isVariant, null);
 		L.EndClass();
 	}
 
@@ -861,259 +861,259 @@ public class UnityEngine_MaterialWrap
 		}
 	}
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int IsChildOf(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 2);
-			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-			UnityEngine.Material arg0 = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 2);
-			bool o = obj.IsChildOf(arg0);
-			LuaDLL.lua_pushboolean(L, o);
-			return 1;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int IsChildOf(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		ToLua.CheckArgsCount(L, 2);
+	// 		UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 		UnityEngine.Material arg0 = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 2);
+	// 		bool o = obj.IsChildOf(arg0);
+	// 		LuaDLL.lua_pushboolean(L, o);
+	// 		return 1;
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int RevertAllPropertyOverrides(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 1);
-			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-			obj.RevertAllPropertyOverrides();
-			return 0;
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int RevertAllPropertyOverrides(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		ToLua.CheckArgsCount(L, 1);
+	// 		UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 		obj.RevertAllPropertyOverrides();
+	// 		return 0;
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int IsPropertyOverriden(IntPtr L)
-	{
-		try
-		{
-			int count = LuaDLL.lua_gettop(L);
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int IsPropertyOverriden(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		int count = LuaDLL.lua_gettop(L);
 
-			if (count == 2 && TypeChecker.CheckTypes<int>(L, 2))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				int arg0 = (int)LuaDLL.lua_tonumber(L, 2);
-				bool o = obj.IsPropertyOverriden(arg0);
-				LuaDLL.lua_pushboolean(L, o);
-				return 1;
-			}
-			else if (count == 2 && TypeChecker.CheckTypes<string>(L, 2))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				string arg0 = ToLua.ToString(L, 2);
-				bool o = obj.IsPropertyOverriden(arg0);
-				LuaDLL.lua_pushboolean(L, o);
-				return 1;
-			}
-			else
-			{
-				return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.Material.IsPropertyOverriden");
-			}
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// 		if (count == 2 && TypeChecker.CheckTypes<int>(L, 2))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			int arg0 = (int)LuaDLL.lua_tonumber(L, 2);
+	// 			bool o = obj.IsPropertyOverriden(arg0);
+	// 			LuaDLL.lua_pushboolean(L, o);
+	// 			return 1;
+	// 		}
+	// 		else if (count == 2 && TypeChecker.CheckTypes<string>(L, 2))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			string arg0 = ToLua.ToString(L, 2);
+	// 			bool o = obj.IsPropertyOverriden(arg0);
+	// 			LuaDLL.lua_pushboolean(L, o);
+	// 			return 1;
+	// 		}
+	// 		else
+	// 		{
+	// 			return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.Material.IsPropertyOverriden");
+	// 		}
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int IsPropertyLocked(IntPtr L)
-	{
-		try
-		{
-			int count = LuaDLL.lua_gettop(L);
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int IsPropertyLocked(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		int count = LuaDLL.lua_gettop(L);
 
-			if (count == 2 && TypeChecker.CheckTypes<int>(L, 2))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				int arg0 = (int)LuaDLL.lua_tonumber(L, 2);
-				bool o = obj.IsPropertyLocked(arg0);
-				LuaDLL.lua_pushboolean(L, o);
-				return 1;
-			}
-			else if (count == 2 && TypeChecker.CheckTypes<string>(L, 2))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				string arg0 = ToLua.ToString(L, 2);
-				bool o = obj.IsPropertyLocked(arg0);
-				LuaDLL.lua_pushboolean(L, o);
-				return 1;
-			}
-			else
-			{
-				return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.Material.IsPropertyLocked");
-			}
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// 		if (count == 2 && TypeChecker.CheckTypes<int>(L, 2))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			int arg0 = (int)LuaDLL.lua_tonumber(L, 2);
+	// 			bool o = obj.IsPropertyLocked(arg0);
+	// 			LuaDLL.lua_pushboolean(L, o);
+	// 			return 1;
+	// 		}
+	// 		else if (count == 2 && TypeChecker.CheckTypes<string>(L, 2))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			string arg0 = ToLua.ToString(L, 2);
+	// 			bool o = obj.IsPropertyLocked(arg0);
+	// 			LuaDLL.lua_pushboolean(L, o);
+	// 			return 1;
+	// 		}
+	// 		else
+	// 		{
+	// 			return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.Material.IsPropertyLocked");
+	// 		}
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int IsPropertyLockedByAncestor(IntPtr L)
-	{
-		try
-		{
-			int count = LuaDLL.lua_gettop(L);
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int IsPropertyLockedByAncestor(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		int count = LuaDLL.lua_gettop(L);
 
-			if (count == 2 && TypeChecker.CheckTypes<int>(L, 2))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				int arg0 = (int)LuaDLL.lua_tonumber(L, 2);
-				bool o = obj.IsPropertyLockedByAncestor(arg0);
-				LuaDLL.lua_pushboolean(L, o);
-				return 1;
-			}
-			else if (count == 2 && TypeChecker.CheckTypes<string>(L, 2))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				string arg0 = ToLua.ToString(L, 2);
-				bool o = obj.IsPropertyLockedByAncestor(arg0);
-				LuaDLL.lua_pushboolean(L, o);
-				return 1;
-			}
-			else
-			{
-				return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.Material.IsPropertyLockedByAncestor");
-			}
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// 		if (count == 2 && TypeChecker.CheckTypes<int>(L, 2))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			int arg0 = (int)LuaDLL.lua_tonumber(L, 2);
+	// 			bool o = obj.IsPropertyLockedByAncestor(arg0);
+	// 			LuaDLL.lua_pushboolean(L, o);
+	// 			return 1;
+	// 		}
+	// 		else if (count == 2 && TypeChecker.CheckTypes<string>(L, 2))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			string arg0 = ToLua.ToString(L, 2);
+	// 			bool o = obj.IsPropertyLockedByAncestor(arg0);
+	// 			LuaDLL.lua_pushboolean(L, o);
+	// 			return 1;
+	// 		}
+	// 		else
+	// 		{
+	// 			return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.Material.IsPropertyLockedByAncestor");
+	// 		}
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int SetPropertyLock(IntPtr L)
-	{
-		try
-		{
-			int count = LuaDLL.lua_gettop(L);
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int SetPropertyLock(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		int count = LuaDLL.lua_gettop(L);
 
-			if (count == 3 && TypeChecker.CheckTypes<int, bool>(L, 2))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				int arg0 = (int)LuaDLL.lua_tonumber(L, 2);
-				bool arg1 = LuaDLL.lua_toboolean(L, 3);
-				obj.SetPropertyLock(arg0, arg1);
-				return 0;
-			}
-			else if (count == 3 && TypeChecker.CheckTypes<string, bool>(L, 2))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				string arg0 = ToLua.ToString(L, 2);
-				bool arg1 = LuaDLL.lua_toboolean(L, 3);
-				obj.SetPropertyLock(arg0, arg1);
-				return 0;
-			}
-			else
-			{
-				return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.Material.SetPropertyLock");
-			}
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// 		if (count == 3 && TypeChecker.CheckTypes<int, bool>(L, 2))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			int arg0 = (int)LuaDLL.lua_tonumber(L, 2);
+	// 			bool arg1 = LuaDLL.lua_toboolean(L, 3);
+	// 			obj.SetPropertyLock(arg0, arg1);
+	// 			return 0;
+	// 		}
+	// 		else if (count == 3 && TypeChecker.CheckTypes<string, bool>(L, 2))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			string arg0 = ToLua.ToString(L, 2);
+	// 			bool arg1 = LuaDLL.lua_toboolean(L, 3);
+	// 			obj.SetPropertyLock(arg0, arg1);
+	// 			return 0;
+	// 		}
+	// 		else
+	// 		{
+	// 			return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.Material.SetPropertyLock");
+	// 		}
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int ApplyPropertyOverride(IntPtr L)
-	{
-		try
-		{
-			int count = LuaDLL.lua_gettop(L);
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int ApplyPropertyOverride(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		int count = LuaDLL.lua_gettop(L);
 
-			if (count == 3 && TypeChecker.CheckTypes<int>(L, 3))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				UnityEngine.Material arg0 = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 2);
-				int arg1 = (int)LuaDLL.lua_tonumber(L, 3);
-				obj.ApplyPropertyOverride(arg0, arg1);
-				return 0;
-			}
-			else if (count == 3 && TypeChecker.CheckTypes<string>(L, 3))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				UnityEngine.Material arg0 = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 2);
-				string arg1 = ToLua.ToString(L, 3);
-				obj.ApplyPropertyOverride(arg0, arg1);
-				return 0;
-			}
-			else if (count == 4 && TypeChecker.CheckTypes<int, bool>(L, 3))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				UnityEngine.Material arg0 = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 2);
-				int arg1 = (int)LuaDLL.lua_tonumber(L, 3);
-				bool arg2 = LuaDLL.lua_toboolean(L, 4);
-				obj.ApplyPropertyOverride(arg0, arg1, arg2);
-				return 0;
-			}
-			else if (count == 4 && TypeChecker.CheckTypes<string, bool>(L, 3))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				UnityEngine.Material arg0 = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 2);
-				string arg1 = ToLua.ToString(L, 3);
-				bool arg2 = LuaDLL.lua_toboolean(L, 4);
-				obj.ApplyPropertyOverride(arg0, arg1, arg2);
-				return 0;
-			}
-			else
-			{
-				return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.Material.ApplyPropertyOverride");
-			}
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// 		if (count == 3 && TypeChecker.CheckTypes<int>(L, 3))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			UnityEngine.Material arg0 = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 2);
+	// 			int arg1 = (int)LuaDLL.lua_tonumber(L, 3);
+	// 			obj.ApplyPropertyOverride(arg0, arg1);
+	// 			return 0;
+	// 		}
+	// 		else if (count == 3 && TypeChecker.CheckTypes<string>(L, 3))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			UnityEngine.Material arg0 = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 2);
+	// 			string arg1 = ToLua.ToString(L, 3);
+	// 			obj.ApplyPropertyOverride(arg0, arg1);
+	// 			return 0;
+	// 		}
+	// 		else if (count == 4 && TypeChecker.CheckTypes<int, bool>(L, 3))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			UnityEngine.Material arg0 = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 2);
+	// 			int arg1 = (int)LuaDLL.lua_tonumber(L, 3);
+	// 			bool arg2 = LuaDLL.lua_toboolean(L, 4);
+	// 			obj.ApplyPropertyOverride(arg0, arg1, arg2);
+	// 			return 0;
+	// 		}
+	// 		else if (count == 4 && TypeChecker.CheckTypes<string, bool>(L, 3))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			UnityEngine.Material arg0 = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 2);
+	// 			string arg1 = ToLua.ToString(L, 3);
+	// 			bool arg2 = LuaDLL.lua_toboolean(L, 4);
+	// 			obj.ApplyPropertyOverride(arg0, arg1, arg2);
+	// 			return 0;
+	// 		}
+	// 		else
+	// 		{
+	// 			return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.Material.ApplyPropertyOverride");
+	// 		}
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int RevertPropertyOverride(IntPtr L)
-	{
-		try
-		{
-			int count = LuaDLL.lua_gettop(L);
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int RevertPropertyOverride(IntPtr L)
+	// {
+	// 	try
+	// 	{
+	// 		int count = LuaDLL.lua_gettop(L);
 
-			if (count == 2 && TypeChecker.CheckTypes<int>(L, 2))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				int arg0 = (int)LuaDLL.lua_tonumber(L, 2);
-				obj.RevertPropertyOverride(arg0);
-				return 0;
-			}
-			else if (count == 2 && TypeChecker.CheckTypes<string>(L, 2))
-			{
-				UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
-				string arg0 = ToLua.ToString(L, 2);
-				obj.RevertPropertyOverride(arg0);
-				return 0;
-			}
-			else
-			{
-				return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.Material.RevertPropertyOverride");
-			}
-		}
-		catch (Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
+	// 		if (count == 2 && TypeChecker.CheckTypes<int>(L, 2))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			int arg0 = (int)LuaDLL.lua_tonumber(L, 2);
+	// 			obj.RevertPropertyOverride(arg0);
+	// 			return 0;
+	// 		}
+	// 		else if (count == 2 && TypeChecker.CheckTypes<string>(L, 2))
+	// 		{
+	// 			UnityEngine.Material obj = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 1);
+	// 			string arg0 = ToLua.ToString(L, 2);
+	// 			obj.RevertPropertyOverride(arg0);
+	// 			return 0;
+	// 		}
+	// 		else
+	// 		{
+	// 			return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.Material.RevertPropertyOverride");
+	// 		}
+	// 	}
+	// 	catch (Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e);
+	// 	}
+	// }
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int SetInt(IntPtr L)
@@ -2572,43 +2572,43 @@ public class UnityEngine_MaterialWrap
 		}
 	}
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_parent(IntPtr L)
-	{
-		object o = null;
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int get_parent(IntPtr L)
+	// {
+	// 	object o = null;
 
-		try
-		{
-			o = ToLua.ToObject(L, 1);
-			UnityEngine.Material obj = (UnityEngine.Material)o;
-			UnityEngine.Material ret = obj.parent;
-			ToLua.Push(L, ret);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e, o, "attempt to index parent on a nil value");
-		}
-	}
+	// 	try
+	// 	{
+	// 		o = ToLua.ToObject(L, 1);
+	// 		UnityEngine.Material obj = (UnityEngine.Material)o;
+	// 		UnityEngine.Material ret = obj.parent;
+	// 		ToLua.Push(L, ret);
+	// 		return 1;
+	// 	}
+	// 	catch(Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e, o, "attempt to index parent on a nil value");
+	// 	}
+	// }
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_isVariant(IntPtr L)
-	{
-		object o = null;
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int get_isVariant(IntPtr L)
+	// {
+	// 	object o = null;
 
-		try
-		{
-			o = ToLua.ToObject(L, 1);
-			UnityEngine.Material obj = (UnityEngine.Material)o;
-			bool ret = obj.isVariant;
-			LuaDLL.lua_pushboolean(L, ret);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e, o, "attempt to index isVariant on a nil value");
-		}
-	}
+	// 	try
+	// 	{
+	// 		o = ToLua.ToObject(L, 1);
+	// 		UnityEngine.Material obj = (UnityEngine.Material)o;
+	// 		bool ret = obj.isVariant;
+	// 		LuaDLL.lua_pushboolean(L, ret);
+	// 		return 1;
+	// 	}
+	// 	catch(Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e, o, "attempt to index isVariant on a nil value");
+	// 	}
+	// }
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int set_shader(IntPtr L)
@@ -2819,23 +2819,23 @@ public class UnityEngine_MaterialWrap
 		}
 	}
 
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int set_parent(IntPtr L)
-	{
-		object o = null;
+	// [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	// static int set_parent(IntPtr L)
+	// {
+	// 	object o = null;
 
-		try
-		{
-			o = ToLua.ToObject(L, 1);
-			UnityEngine.Material obj = (UnityEngine.Material)o;
-			UnityEngine.Material arg0 = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 2);
-			obj.parent = arg0;
-			return 0;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e, o, "attempt to index parent on a nil value");
-		}
-	}
+	// 	try
+	// 	{
+	// 		o = ToLua.ToObject(L, 1);
+	// 		UnityEngine.Material obj = (UnityEngine.Material)o;
+	// 		UnityEngine.Material arg0 = (UnityEngine.Material)ToLua.CheckObject<UnityEngine.Material>(L, 2);
+	// 		obj.parent = arg0;
+	// 		return 0;
+	// 	}
+	// 	catch(Exception e)
+	// 	{
+	// 		return LuaDLL.toluaL_exception(L, e, o, "attempt to index parent on a nil value");
+	// 	}
+	// }
 }
 

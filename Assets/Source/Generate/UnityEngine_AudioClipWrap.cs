@@ -78,6 +78,14 @@ public class UnityEngine_AudioClipWrap
 				LuaDLL.lua_pushboolean(L, o);
 				return 1;
 			}
+			// {
+			// 	UnityEngine.AudioClip obj = (UnityEngine.AudioClip)ToLua.CheckObject(L, 1, typeof(UnityEngine.AudioClip));
+			// 	float[] arg0 = ToLua.ToNumberArray<float>(L, 2);
+			// 	int arg1 = (int)LuaDLL.lua_tonumber(L, 3);
+			// 	bool o = obj.GetData(arg0, arg1);
+			// 	LuaDLL.lua_pushboolean(L, o);
+			// 	return 1;
+			// }
 			else
 			{
 				return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.AudioClip.GetData");
