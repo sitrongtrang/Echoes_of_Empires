@@ -9,14 +9,17 @@ public class RecruitOptionList : MonoBehaviour
     
     public void DisplayOptions(List<BaseCharacterConfig> recruits)
     {
-        for (int i = 0; i < recruits.Count; i++)
+        for (int i = 0; i < GameConstants.MAX_RECRUIT_OPTIONS; i++)
         {
             if (i >= transform.childCount)
             {
                 GameObject option = Instantiate(_optionPrefab, transform);
                 option.transform.SetParent(transform);
                 RecruitOption recruitOption = option.AddComponent<RecruitOption>();
-                recruitOption.Initialize(recruits[i], _characterInfo, _emptyFrame);
+                if (i < recruits.Count)
+                    recruitOption.Initialize(recruits[i], _characterInfo, _emptyFrame);
+                else
+                    recruitOption.Initialize(null, _characterInfo, _emptyFrame);
             }
             else
             {
@@ -24,19 +27,20 @@ public class RecruitOptionList : MonoBehaviour
                 option.SetActive(true);
                 if (option.TryGetComponent<RecruitOption>(out var recruitOption))
                 {
-                    recruitOption.Initialize(recruits[i], _characterInfo, _emptyFrame);
+                    if (i < recruits.Count)
+                        recruitOption.Initialize(recruits[i], _characterInfo, _emptyFrame);
+                    else
+                        recruitOption.Initialize(null, _characterInfo, _emptyFrame);
                 }
                 else
                 {
                     recruitOption = option.AddComponent<RecruitOption>();
-                    recruitOption.Initialize(recruits[i], _characterInfo, _emptyFrame);
+                    if (i < recruits.Count)
+                        recruitOption.Initialize(recruits[i], _characterInfo, _emptyFrame);
+                    else
+                        recruitOption.Initialize(null, _characterInfo, _emptyFrame);
                 }
             }
-        }
-
-        for (int i = recruits.Count; i < transform.childCount; i++)
-        {
-            transform.GetChild(i).gameObject.SetActive(false);
         }
     }
 }

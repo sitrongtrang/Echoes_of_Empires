@@ -28,18 +28,25 @@ public class RecruitOption : MonoBehaviour
     
         _unitConfig = unitConfig;
         _characterInfo = characterInfo;
+        
+        Button button = GetComponentInChildren<Button>();
+        button.onClick.RemoveAllListeners();
+        
+        Image portraitFrame = GetComponent<Image>();
+        Image portraitImage = transform.Find("Portrait").GetComponent<Image>();
 
-        if (unitConfig.Portrait != null)
+        if (unitConfig != null)
         {
-            Button button = GetComponentInChildren<Button>();
-            button.onClick.RemoveAllListeners();
             button.onClick.AddListener(DisplayInfo);
             button.gameObject.SetActive(true);
-            Image portraitFrame = GetComponent<Image>();
-            if (portraitFrame != null)
-                portraitFrame.sprite = GameManager.Instance.RarityMapper.GetFrame(unitConfig.Rarity);
-            Image portraitImage = transform.Find("Portrait").GetComponent<Image>();
+
+            portraitFrame.sprite = GameManager.Instance.RarityMapper.GetFrame(unitConfig.Rarity);
             portraitImage.sprite = unitConfig.Portrait;
+        }
+        else
+        {
+            portraitFrame.sprite = emptyFrame;
+            portraitImage.sprite = null;
         }
     }
 

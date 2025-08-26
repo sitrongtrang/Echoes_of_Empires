@@ -11,17 +11,23 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        Canvas[] canvases = FindObjectsByType<Canvas>(FindObjectsInactive.Include, FindObjectsSortMode.None);
-        for (int i = 0; i < canvases.Length; i++)
-            if (canvases[i] != _mainMenuCanvas)
-                _canvases.Add(canvases[i]);
+        // Canvas[] canvases = FindObjectsByType<Canvas>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        // for (int i = 0; i < canvases.Length; i++)
+        //     if (canvases[i] != _mainMenuCanvas)
+        //         _canvases.Add(canvases[i]);
     }
 
     public void ShowRecruitCanvas()
     {
-        _currentCanvas.enabled = false;
-        _recruitCanvas.enabled = true;
-        _currentCanvas = _recruitCanvas;
+        Debug.Log("Showing");
+        ShowCanvas(_recruitCanvas);
+    }
+
+    private void ShowCanvas(Canvas canvas)
+    {
+        if (_currentCanvas) _currentCanvas.gameObject.SetActive(false);
+        canvas.gameObject.SetActive(true);
+        _currentCanvas = canvas;
     }
 
     private void HideAllCanvases()
