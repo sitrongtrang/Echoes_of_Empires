@@ -9,14 +9,14 @@ public class RecruitOption : MonoBehaviour
 
     void OnEnable()
     {
-        Button button = GetComponentInChildren<Button>();
+        Button button = GetComponentInChildren<Button>(true);
         if (button != null)
             button.onClick.AddListener(DisplayInfo);
     }
 
     void OnDisable()
     {
-        Button button = GetComponentInChildren<Button>();
+        Button button = GetComponentInChildren<Button>(true);
         if (button != null)
             button.onClick.RemoveAllListeners();
     }
@@ -29,7 +29,7 @@ public class RecruitOption : MonoBehaviour
         _unitConfig = unitConfig;
         _characterInfo = characterInfo;
         
-        Button button = GetComponentInChildren<Button>();
+        Button button = GetComponentInChildren<Button>(true);
         button.onClick.RemoveAllListeners();
         
         Image portraitFrame = GetComponent<Image>();
@@ -45,6 +45,7 @@ public class RecruitOption : MonoBehaviour
         }
         else
         {
+            button.gameObject.SetActive(false);
             portraitFrame.sprite = emptyFrame;
             portraitImage.sprite = null;
         }
@@ -63,7 +64,7 @@ public class RecruitOption : MonoBehaviour
     {
         _unitConfig = null;
         _characterInfo = null;
-        Button button = GetComponentInChildren<Button>();
+        Button button = GetComponentInChildren<Button>(true);
         button.onClick.RemoveAllListeners();
         button.gameObject.SetActive(false);
         Image portraitFrame = GetComponent<Image>();
