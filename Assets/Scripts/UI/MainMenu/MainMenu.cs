@@ -4,10 +4,11 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Canvas _recruitCanvas;
-    [SerializeField] private Canvas _mainMenuCanvas;
+    [SerializeField] private Canvas _crewCanvas;
+    // [SerializeField] private Canvas _mainMenuCanvas;
 
     private Canvas _currentCanvas;
-    private List<Canvas> _canvases = new();
+    // private List<Canvas> _canvases = new();
 
     void Start()
     {
@@ -22,6 +23,11 @@ public class MainMenu : MonoBehaviour
         ShowCanvas(_recruitCanvas);
     }
 
+    public void ShowCrewCanvas()
+    {
+        ShowCanvas(_crewCanvas);
+    }
+
     private void ShowCanvas(Canvas canvas)
     {
         if (_currentCanvas) _currentCanvas.gameObject.SetActive(false);
@@ -29,9 +35,15 @@ public class MainMenu : MonoBehaviour
         _currentCanvas = canvas;
     }
 
-    private void HideAllCanvases()
+    public void CloseCanvas()
     {
-        for (int i = 0; i < _canvases.Count; i++)
-            _canvases[i].enabled = false;
+        _currentCanvas.gameObject.SetActive(false);
+        _currentCanvas = null;
     }
+
+    // private void HideAllCanvases()
+    // {
+    //     for (int i = 0; i < _canvases.Count; i++)
+    //         _canvases[i].enabled = false;
+    // }
 }
